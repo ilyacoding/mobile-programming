@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-VB-BMT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUx-To-4w3">
                                                 <rect key="frame" x="16" y="8" width="343" height="175"/>
@@ -37,20 +37,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6q-VJ-cp8">
-                                                <rect key="frame" x="16" y="238" width="343" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="20" y="238" width="339" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94I-aj-M8l">
-                                                <rect key="frame" x="16" y="267" width="343" height="200"/>
+                                                <rect key="frame" x="16" y="264" width="343" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS2-My-FpB">
-                                                <rect key="frame" x="155" y="477" width="65" height="30"/>
+                                                <rect key="frame" x="155" y="474" width="65" height="30"/>
                                                 <state key="normal" title="Open link"/>
                                                 <connections>
                                                     <segue destination="QEp-Wn-FVd" kind="show" identifier="fromFullDescriptionToWeb" id="zil-zz-CT5"/>
@@ -63,7 +63,7 @@
                                             <constraint firstItem="Z06-05-25Y" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="16" id="3GN-Ih-kQ4"/>
                                             <constraint firstItem="94I-aj-M8l" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="16" id="40h-nN-x5j"/>
                                             <constraint firstAttribute="trailing" secondItem="94I-aj-M8l" secondAttribute="trailing" constant="16" id="Btd-3l-Lxo"/>
-                                            <constraint firstItem="o6q-VJ-cp8" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="16" id="CII-qs-Bdi"/>
+                                            <constraint firstItem="o6q-VJ-cp8" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="20" id="CII-qs-Bdi"/>
                                             <constraint firstItem="kS2-My-FpB" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="155" id="DlI-Na-jqr"/>
                                             <constraint firstItem="SUx-To-4w3" firstAttribute="top" secondItem="tJN-VB-BMT" secondAttribute="top" constant="8" id="GMe-3C-1Jh"/>
                                             <constraint firstAttribute="trailing" secondItem="kS2-My-FpB" secondAttribute="trailing" constant="155" id="K3U-V8-Fwy"/>
