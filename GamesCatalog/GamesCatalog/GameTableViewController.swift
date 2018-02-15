@@ -11,6 +11,7 @@ import UIKit
 class GameTableViewController: UITableViewController {
     
     var games = [Game]()
+    var choosenGame : Game? = nil
     
     private func loadGames()
     {
@@ -60,10 +61,15 @@ class GameTableViewController: UITableViewController {
         let game = games[indexPath.row]
         
         cell.titleLabel.text = game.Title
+        cell.releaseDataLabel.text = game.ReleaseDate
         cell.descriptionLabel.text = game.ShortDescription
         cell.previewImageView.image = game.Image
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        updateChoosenGame()
     }
 
 
@@ -102,14 +108,22 @@ class GameTableViewController: UITableViewController {
     }
     */
 
-    /*
+    func updateChoosenGame() {
+        choosenGame = games[(tableView.indexPathForSelectedRow?.row)!]
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "fromListToFullDescription"){
+            let destVC = segue.destination as! GameViewController;
+            updateChoosenGame()
+            destVC.game = choosenGame
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

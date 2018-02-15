@@ -17,11 +17,13 @@ class GamesJSONSerializer {
             var array = [Game]();
             for game in json["games"].arrayValue {
                 let title = game["title"].stringValue
+                let releaseDate = game["releaseDate"].stringValue
                 let shortDescription = game["shortDescription"].stringValue
                 let fullDesc = game["fullDescription"].stringValue
                 let urlLink = game["url"].stringValue
                 let imageSource = game["image"].stringValue
-                let gameInfo = Game(title: title, shortDescription : shortDescription, fullDescription : fullDesc, url : urlLink, image : UIImage(named : imageSource))
+                let fullImageSource = game["fullImage"].stringValue
+                let gameInfo = Game(title: title, releaseDate: releaseDate, shortDescription : shortDescription, fullDescription : fullDesc, url : urlLink, image : UIImage(named : imageSource), fullImage : UIImage(named : fullImageSource))
                 array += [gameInfo]
             }
             return array
