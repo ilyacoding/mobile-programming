@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var gameImage: UIImageView!
     @IBOutlet weak var gameTitle: UILabel!
     @IBOutlet weak var gameReleaseDate: UILabel!
@@ -34,6 +35,7 @@ class GameViewController: UIViewController {
         gameTitle.text = game!.Title
         gameReleaseDate.text = "Release date: " + game!.ReleaseDate
         gameDescription.text = game!.FullDescription
+//        gameView.
 //        gameDescription.sizeToFit()
         
 //        openUrlButton.frame.origin.y += gameDescription.frame.height

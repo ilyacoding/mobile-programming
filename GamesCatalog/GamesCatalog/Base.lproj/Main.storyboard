@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJN-VB-BMT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUx-To-4w3">
                                                 <rect key="frame" x="16" y="8" width="343" height="175"/>
@@ -50,7 +50,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS2-My-FpB">
-                                                <rect key="frame" x="155" y="498" width="65" height="30"/>
+                                                <rect key="frame" x="155" y="477" width="65" height="30"/>
                                                 <state key="normal" title="Open link"/>
                                                 <connections>
                                                     <segue destination="QEp-Wn-FVd" kind="show" identifier="fromFullDescriptionToWeb" id="zil-zz-CT5"/>
@@ -69,11 +69,12 @@
                                             <constraint firstAttribute="trailing" secondItem="kS2-My-FpB" secondAttribute="trailing" constant="155" id="K3U-V8-Fwy"/>
                                             <constraint firstAttribute="trailing" secondItem="kS2-My-FpB" secondAttribute="trailing" constant="155" id="M8O-Zl-gAs"/>
                                             <constraint firstAttribute="trailing" secondItem="Z06-05-25Y" secondAttribute="trailing" constant="16" id="Oyf-Yo-S0H"/>
-                                            <constraint firstItem="kS2-My-FpB" firstAttribute="top" secondItem="94I-aj-M8l" secondAttribute="bottom" constant="31" id="Qsi-4m-KiX"/>
+                                            <constraint firstItem="kS2-My-FpB" firstAttribute="top" secondItem="94I-aj-M8l" secondAttribute="bottom" constant="10" id="Qsi-4m-KiX"/>
+                                            <constraint firstAttribute="bottom" secondItem="kS2-My-FpB" secondAttribute="bottom" constant="20" id="Uk3-zr-N8S"/>
                                             <constraint firstAttribute="trailing" secondItem="o6q-VJ-cp8" secondAttribute="trailing" constant="16" id="X0r-gZ-o8s"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="esG-kJ-2fi"/>
                                             <constraint firstAttribute="trailing" secondItem="SUx-To-4w3" secondAttribute="trailing" constant="16" id="h1Z-HD-ech"/>
                                             <constraint firstItem="Z06-05-25Y" firstAttribute="top" secondItem="SUx-To-4w3" secondAttribute="bottom" constant="20" id="tey-pM-vCb"/>
-                                            <constraint firstAttribute="height" constant="1200" id="vSo-U5-Dne"/>
                                             <constraint firstItem="SUx-To-4w3" firstAttribute="leading" secondItem="tJN-VB-BMT" secondAttribute="leading" constant="16" id="wRf-Uc-sdc"/>
                                             <constraint firstItem="o6q-VJ-cp8" firstAttribute="top" secondItem="Z06-05-25Y" secondAttribute="bottom" constant="9" id="zlG-lB-D9J"/>
                                         </constraints>
@@ -103,6 +104,7 @@
                         <outlet property="gameImage" destination="SUx-To-4w3" id="AYX-VN-aOW"/>
                         <outlet property="gameReleaseDate" destination="o6q-VJ-cp8" id="Z0i-qH-O1l"/>
                         <outlet property="gameTitle" destination="Z06-05-25Y" id="5hL-jx-0dJ"/>
+                        <outlet property="gameView" destination="tJN-VB-BMT" id="o2S-Bw-c47"/>
                         <outlet property="openUrlButton" destination="kS2-My-FpB" id="Pa3-05-QUJ"/>
                     </connections>
                 </viewController>
@@ -159,7 +161,7 @@
                                             <rect key="frame" x="110" y="36" width="249" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tk-Gs-fV7">
@@ -169,17 +171,17 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-TF-790">
-                                            <rect key="frame" x="16" y="5" width="79" height="79"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8i-tR-Vda">
                                             <rect key="frame" x="324" y="8" width="35" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-TF-790">
+                                            <rect key="frame" x="25" y="8" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
