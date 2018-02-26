@@ -3,6 +3,6 @@
     <string name="game_preview_image">Game preview image</string>
     <string name="game_s_full_description_arrow">Game\'s full description arrow</string>
     <string name="game_list_sample_date">2010</string>
-    <string name="game_list_sample_description">Just gona stand there and ...</string>
+    <string name="game_list_sample_description">Some sample game description goes here. Some sample game description goes here. Some sample game description goes here. Some sample game description goes here.</string>
     <string name="game_list_sample_title">Some sample text goes here</string>
 </resources>

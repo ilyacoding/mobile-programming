@@ -15,7 +15,7 @@
         android:layout_marginEnd="5dip">
 
         <ImageView
-            android:id="@+id/GamePreview"
+            android:id="@+id/GameImagePreview"
             android:layout_width="50dip"
             android:layout_height="50dip"
             android:src="@mipmap/ic_launcher"
@@ -36,15 +36,18 @@
         tools:ignore="RelativeOverlap" />
 
     <TextView
-        android:id="@+id/artist"
+        android:id="@+id/GameShortDescription"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/GameTitle"
         android:textColor="#343434"
         android:textSize="10sp"
         android:layout_marginTop="1dip"
+        android:layout_marginEnd="40dip"
         android:layout_toEndOf="@+id/thumbnail"
         android:text="@string/game_list_sample_description"
+        android:ellipsize="end"
+        android:maxLines="2"
         tools:ignore="SmallSp" />
 
     <TextView
