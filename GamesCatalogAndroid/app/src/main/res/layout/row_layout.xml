@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="5dip">
+
+        <ImageView
+            android:id="@+id/GamePreview"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/game_preview_image" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/GameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:text="@string/game_list_sample_title"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/GameTitle"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        android:layout_marginTop="1dip"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:text="@string/game_list_sample_description"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/GameYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/GameTitle"
+        android:gravity="right"
+        android:text="@string/game_list_sample_date"
+        android:layout_marginEnd="5dip"
+        android:textSize="10sp"
+        android:textColor="#10bcc9"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap,RtlHardcoded,SmallSp" />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/full_game_row"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/game_s_full_description_arrow" />
+</RelativeLayout>
