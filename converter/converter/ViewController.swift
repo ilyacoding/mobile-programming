@@ -14,108 +14,112 @@ class ViewController: UIViewController {
     @IBOutlet weak var eurosTextInput: UITextField!
     @IBOutlet weak var poundsTextInput: UITextField!
     
-    let dollarsRate = 1.0;
-    let rublesRate = 1.9;
-    let eurosRate = 0.9;
-    let poundsRate = 0.8;
+    let dollarsRate = 1.0
+    let rublesRate = 1.9
+    let eurosRate = 0.9
+    let poundsRate = 0.8
     
     enum UpdateField { case Dollars, Rubles, Euros, Pounds }
     
     @IBAction func textInputChanged(_ sender: Any) {
-        var dollars : Double?;
+        var dollars : Double?
         if (dollarsTextInput.text!.isEmpty)
         {
-            return;
+            dollars = 0
+        } else {
+            dollars = convertToDouble(dollarsTextInput.text!)
         }
-        
-        dollars = convertToDouble(dollarsTextInput.text!);
         
         if (dollars != nil)
         {
-            updateCurrencyInputs(dollars!, [UpdateField.Rubles, UpdateField.Euros, UpdateField.Pounds]);
+            updateCurrencyInputs(dollars!, [UpdateField.Rubles, UpdateField.Euros, UpdateField.Pounds])
         }
         else {
-            showInputErrorAlert();
+            showInputErrorAlert()
         }
     }
     
     @IBAction func rublesInputChanged(_ sender: Any) {
-        let textInput = sender as! UITextField;
-        var rubles : Double?;
+        let textInput = sender as! UITextField
+        var rubles : Double?
         if (textInput.text!.isEmpty)
         {
-            return;
+            rubles = 0
+        } else {
+            rubles = convertToDouble(textInput.text!)
         }
-        
-        rubles = convertToDouble(textInput.text!);
         
         if (rubles != nil)
         {
-            let dollars = Converter(numerator: rubles!).convertToGeneric(rublesRate);
-            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Euros, UpdateField.Pounds]);
+            let dollars = Converter(numerator: rubles!).convertToGeneric(rublesRate)
+            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Euros, UpdateField.Pounds])
         } else {
-            showInputErrorAlert();
+            showInputErrorAlert()
         }
     }
-    
+
     @IBAction func eurosInputChanged(_ sender: Any) {
-        let textInput = sender as! UITextField;
-        var euros : Double?;
+        let textInput = sender as! UITextField
+        var euros : Double?
         if (textInput.text!.isEmpty)
         {
-            return;
+            euros = 0
+        } else {
+            euros = convertToDouble(textInput.text!)
         }
-        
-        euros = convertToDouble(textInput.text!);
         
         if (euros != nil)
         {
-            let dollars = Converter(numerator: euros!).convertToGeneric(eurosRate);
-            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Rubles, UpdateField.Pounds]);
+            let dollars = Converter(numerator: euros!).convertToGeneric(eurosRate)
+            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Rubles, UpdateField.Pounds])
         } else {
-            showInputErrorAlert();
+            showInputErrorAlert()
         }
     }
     
     @IBAction func poundsInputChanged(_ sender: Any) {
-        let textInput = sender as! UITextField;
-        var pounds : Double?;
+        let textInput = sender as! UITextField
+        var pounds : Double?
         if (textInput.text!.isEmpty)
         {
-            return;
+            pounds = 0
+        } else {
+            pounds = convertToDouble(textInput.text!)
         }
-        
-        pounds = convertToDouble(textInput.text!);
         
         if (pounds != nil)
         {
-            let dollars = Converter(numerator: pounds!).convertToGeneric(poundsRate);
-            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Euros, UpdateField.Rubles]);
+            let dollars = Converter(numerator: pounds!).convertToGeneric(poundsRate)
+            updateCurrencyInputs(dollars, [UpdateField.Dollars, UpdateField.Euros, UpdateField.Rubles])
         } else {
-            showInputErrorAlert();
+            showInputErrorAlert()
         }
     }
     
+    func formatOutput(amount : Double) -> String {
+        return String(format: "%.2f", amount)
+    }
+    
     func updateCurrencyInputs(_ dollars: Double, _ fields: Set<UpdateField>) {
-        let converter : Converter = Converter(numerator: dollars);
+        let converter : Converter = Converter(numerator: dollars)
         if (fields.contains(UpdateField.Dollars)) {
-            dollarsTextInput.text = String(converter.convert(dollarsRate));
+            dollarsTextInput.text = formatOutput(amount: converter.convert(dollarsRate))
         }
         if (fields.contains(UpdateField.Rubles)) {
-            rublesTextInput.text = String(converter.convert(rublesRate));
+            rublesTextInput.text = formatOutput(amount: converter.convert(rublesRate))
         }
         if (fields.contains(UpdateField.Euros)) {
-            eurosTextInput.text = String(converter.convert(eurosRate));
+            eurosTextInput.text = formatOutput(amount: converter.convert(eurosRate))
         }
         if (fields.contains(UpdateField.Pounds)) {
-            poundsTextInput.text = String(converter.convert(poundsRate));
+            poundsTextInput.text = formatOutput(amount: converter.convert(poundsRate))
         }
     }
     
     func convertToDouble(_ value : String) -> Double?
     {
-        let formatter : NumberFormatter = NumberFormatter();
-        return formatter.number(from: value)?.doubleValue;
+        let formatter : NumberFormatter = NumberFormatter()
+        return formatter.number(from: value)?.doubleValue
     }
 
     override func viewDidLoad() {
@@ -127,7 +131,7 @@ class ViewController: UIViewController {
     }
     
     func showInputErrorAlert() {
-        showAlert(title: "Try again!", message: "Invalid input");
+        showAlert(title: "Try again!", message: "Invalid input")
     }
 
     func showAlert(title: String, message: String) {

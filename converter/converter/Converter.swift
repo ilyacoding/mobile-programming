@@ -11,17 +11,15 @@ import Foundation
 class Converter {
     var numerator : Double;
     
-    init(numerator: Double){
+    init(numerator: Double) {
         self.numerator = numerator;
     }
     
-    func convert(_ denominator: Double) -> Double
-    {
+    func convert(_ denominator: Double) -> Double {
         return numerator * denominator;
     }
     
-    func convertToGeneric(_ denominator: Double) -> Double
-    {
+    func convertToGeneric(_ denominator: Double) -> Double {
         if (denominator > 0) {
             return numerator / denominator;
         }
