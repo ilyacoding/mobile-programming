@@ -1,7 +1,5 @@
 package me.webasm.gamescatalogandroid;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,14 +12,14 @@ import java.util.ArrayList;
  * Created by ikovalenko on 2/26/18.
  */
 
-public class GameJSONParser {
+class GameJSONParser {
     private InputStream _inputStream;
 
-    public GameJSONParser(InputStream inputStream) {
+    GameJSONParser(InputStream inputStream) {
         _inputStream = inputStream;
     }
 
-    public ArrayList<Game> parseToArrayList() {
+    ArrayList<Game> parseToArrayList() {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ArrayList<Game> data = new ArrayList<>();
 
@@ -40,9 +38,7 @@ public class GameJSONParser {
             JSONObject jObject = new JSONObject(byteArrayOutputStream.toString());
             JSONArray jArray = jObject.getJSONArray("games");
 
-
             for (int i = 0; i < jArray.length(); i++) {
-
                 String title = jArray.getJSONObject(i).getString("title");
                 String releaseDate = jArray.getJSONObject(i).getString("releaseDate");
                 String shortDescription = jArray.getJSONObject(i).getString("shortDescription");
@@ -50,7 +46,8 @@ public class GameJSONParser {
                 String url = jArray.getJSONObject(i).getString("url");
                 String image = jArray.getJSONObject(i).getString("image");
                 String fullImage = jArray.getJSONObject(i).getString("fullImage");
-                data.add(new Game(title, releaseDate, shortDescription, fullDescription, url, image, fullImage));
+                data.add(new Game(title, releaseDate, shortDescription, fullDescription, url, image,
+                        fullImage));
             }
         } catch (Exception e) {
             e.printStackTrace();
