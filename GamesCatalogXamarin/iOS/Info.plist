@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>GamesCatalogXamarin</string>
+	<string>GamesCatalog</string>
 	<key>CFBundleName</key>
-	<string>GamesCatalogXamarin</string>
+	<string>GamesCatalog</string>
 	<key>CFBundleIdentifier</key>
-	<string>me.webasm.GamesCatalogXamarin</string>
+	<string>me.webasm.GamesCatalog</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

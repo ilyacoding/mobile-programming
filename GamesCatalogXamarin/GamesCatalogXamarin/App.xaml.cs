@@ -8,7 +8,7 @@ namespace GamesCatalogXamarin
         {
             InitializeComponent();
 
-            MainPage = new GamesCatalogXamarinPage();
+            MainPage = new NavigationPage(new GamesCatalogXamarinPage());
         }
 
         protected override void OnStart()

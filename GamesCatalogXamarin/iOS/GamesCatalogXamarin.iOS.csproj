@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{EC3501CB-5836-4137-B6EC-CBA1407CBBDB}</ProjectGuid>
+    <ProjectGuid>{91DE1583-BFB4-443B-9AE0-E1425ED57CAF}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>GamesCatalogXamarin.iOS</RootNamespace>
@@ -23,7 +23,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>52356</IOSDebuggerPort>
+    <IOSDebuggerPort>43524</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -71,7 +71,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <IOSDebuggerPort>27820</IOSDebuggerPort>
+    <IOSDebuggerPort>14360</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -94,6 +94,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -113,8 +116,33 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="MultiLineRendererIOS.cs" />
   </ItemGroup>
-  <Import Project="..\GamesCatalogXamarin.projitems" Label="Shared" Condition="Exists('..\GamesCatalogXamarin.projitems')" />
+  <ItemGroup>
+    <BundleResource Include="Resources\bf3full.png" />
+    <BundleResource Include="Resources\codfull.png" />
+    <BundleResource Include="Resources\csfull.png" />
+    <BundleResource Include="Resources\csgofull.png" />
+    <BundleResource Include="Resources\dodfull.png" />
+    <BundleResource Include="Resources\halflifefull.png" />
+    <BundleResource Include="Resources\left4deadfull.png" />
+    <BundleResource Include="Resources\minecraftfull.png" />
+    <BundleResource Include="Resources\rustfull.png" />
+    <BundleResource Include="Resources\sourcefull.png" />
+    <BundleResource Include="Resources\tf2full.png" />
+    <BundleResource Include="Resources\bf3.png" />
+    <BundleResource Include="Resources\callofduty.png" />
+    <BundleResource Include="Resources\cs.png" />
+    <BundleResource Include="Resources\csgo.png" />
+    <BundleResource Include="Resources\dod.png" />
+    <BundleResource Include="Resources\halflife.png" />
+    <BundleResource Include="Resources\left4dead.png" />
+    <BundleResource Include="Resources\minecraft.png" />
+    <BundleResource Include="Resources\rust.png" />
+    <BundleResource Include="Resources\source.png" />
+    <BundleResource Include="Resources\tf2.png" />
+  </ItemGroup>
+  <Import Project="..\GamesCatalogXamarin\GamesCatalogXamarin.projitems" Label="Shared" Condition="Exists('..\GamesCatalogXamarin\GamesCatalogXamarin.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>

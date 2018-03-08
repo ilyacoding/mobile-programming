@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0151BEA7-B79A-415D-8F79-5E70DD8A0286}</ProjectGuid>
+    <ProjectGuid>{5B2B8257-89C6-4E60-B278-8C5BE396B46A}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>GamesCatalogXamarin.Droid</RootNamespace>
@@ -106,6 +106,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -126,8 +129,30 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\bf3.png" />
+    <AndroidResource Include="Resources\drawable\callofduty.png" />
+    <AndroidResource Include="Resources\drawable\cs.png" />
+    <AndroidResource Include="Resources\drawable\csgo.png" />
+    <AndroidResource Include="Resources\drawable\dod.png" />
+    <AndroidResource Include="Resources\drawable\halflife.png" />
+    <AndroidResource Include="Resources\drawable\left4dead.png" />
+    <AndroidResource Include="Resources\drawable\minecraft.png" />
+    <AndroidResource Include="Resources\drawable\rust.png" />
+    <AndroidResource Include="Resources\drawable\source.png" />
+    <AndroidResource Include="Resources\drawable\tf2.png" />
+    <AndroidResource Include="Resources\drawable\bf3full.png" />
+    <AndroidResource Include="Resources\drawable\codfull.png" />
+    <AndroidResource Include="Resources\drawable\csfull.png" />
+    <AndroidResource Include="Resources\drawable\csgofull.png" />
+    <AndroidResource Include="Resources\drawable\dodfull.png" />
+    <AndroidResource Include="Resources\drawable\halflifefull.png" />
+    <AndroidResource Include="Resources\drawable\left4deadfull.png" />
+    <AndroidResource Include="Resources\drawable\minecraftfull.png" />
+    <AndroidResource Include="Resources\drawable\rustfull.png" />
+    <AndroidResource Include="Resources\drawable\sourcefull.png" />
+    <AndroidResource Include="Resources\drawable\tf2full.png" />
   </ItemGroup>
-  <Import Project="..\GamesCatalogXamarin.projitems" Label="Shared" Condition="Exists('..\GamesCatalogXamarin.projitems')" />
+  <Import Project="..\GamesCatalogXamarin\GamesCatalogXamarin.projitems" Label="Shared" Condition="Exists('..\GamesCatalogXamarin\GamesCatalogXamarin.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />

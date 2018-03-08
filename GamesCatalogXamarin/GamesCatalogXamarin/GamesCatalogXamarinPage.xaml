@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:GamesCatalogXamarin" 
+             x:Class="GamesCatalogXamarin.GamesCatalogXamarinPage"
+             Title="Games catalog">
+    
+    <ListView ItemsSource="{Binding Games}"
+          HasUnevenRows="True"
+          ItemSelected="ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal" Padding="8">
+                            <Image WidthRequest="75" HeightRequest="75" Source="{Binding Image}"></Image>
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                              <Grid>
+                                <Grid.RowDefinitions>
+                                  <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="*" />
+                                  <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Title}" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding ReleaseDate}" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="1" />
+                              </Grid>
+                              <Label Text="{Binding ShortDescription}" LineBreakMode="TailTruncation"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
