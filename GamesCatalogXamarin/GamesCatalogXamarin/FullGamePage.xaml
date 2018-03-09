@@ -8,11 +8,11 @@
             <StackLayout Orientation="Vertical">
                 <Image HorizontalOptions="Fill" Source="{Binding Game.FullImage}"></Image>
                 <Label HorizontalOptions="Center" Text="{Binding Game.Title}" Font="24"/>
-                <StackLayout Orientation="Horizontal" Margin="10">
+                <StackLayout Orientation="Horizontal" Margin="5">
                     <Label Text="Release:" TextColor="Gray"></Label>
                     <Label Text="{Binding Game.ReleaseDate}" TextColor="Gray"></Label>
                 </StackLayout>
-                <Label Text="{Binding Game.FullDescription}" Margin="10"></Label>
+                <Label Text="{Binding Game.FullDescription}" Margin="5"></Label>
                 <Label Text="Open url" TextColor="Blue" HorizontalTextAlignment="Center" Margin="0,8,0,8">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLinkClicked" />
