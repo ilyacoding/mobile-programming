@@ -8,9 +8,10 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>GamesCatalogXamarin</Import_RootNamespace>
   </PropertyGroup>
-  <Generator>
+  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)GamesCatalogXamarinPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)GameWebPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)games.json" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)FullGamePage.xaml">
       <SubType>Designer</SubType>
@@ -21,10 +22,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)GameWebPage.xaml.cs">
+      <DependentUpon>GameWebPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)GamesCatalogXamarinPage.xaml.cs">
       <DependentUpon>GamesCatalogXamarinPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FullGamePage.xaml.cs">
       <DependentUpon>FullGamePage.xaml</DependentUpon>
     </Compile>

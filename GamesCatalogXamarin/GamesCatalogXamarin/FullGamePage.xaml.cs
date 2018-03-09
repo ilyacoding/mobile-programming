@@ -8,6 +8,20 @@ namespace GamesCatalogXamarin
     {
         public Game Game { get; set; }
 
+        public FullGamePage()
+        {
+            Game = new Game
+            {
+                Title = "Some sample text",
+                FullDescription = "Some long text",
+                ReleaseDate = "2018",
+                Image = "csgo",
+                FullImage = "csgofull"
+            };
+            BindingContext = this;
+            InitializeComponent();
+        }
+
         public FullGamePage(Game game)
         {
             Game = game;

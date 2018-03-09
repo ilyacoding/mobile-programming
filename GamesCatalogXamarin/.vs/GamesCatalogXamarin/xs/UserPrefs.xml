@@ -1,5 +1,14 @@
 ﻿<Properties StartupConfiguration="{5B2B8257-89C6-4E60-B278-8C5BE396B46A}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml">
+    <Files>
+      <File FileName="GamesCatalogXamarin/FullGamePage.xaml.cs" Line="22" Column="35" />
+      <File FileName="GamesCatalogXamarin/GameWebPage.xaml" Line="9" Column="1" />
+      <File FileName="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml" Line="38" Column="1" />
+      <File FileName="GamesCatalogXamarin/FullGamePage.xaml" Line="25" Column="1" />
+      <File FileName="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Droid/GamesCatalogXamarin.Droid.csproj" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
