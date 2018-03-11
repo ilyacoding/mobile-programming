@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{5B2B8257-89C6-4E60-B278-8C5BE396B46A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="GamesCatalogXamarin/FullGamePage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MultiLineLabelRendererDroid.cs">
     <Files>
       <File FileName="GamesCatalogXamarin/FullGamePage.xaml.cs" Line="22" Column="35" />
       <File FileName="GamesCatalogXamarin/GameWebPage.xaml" Line="9" Column="1" />
-      <File FileName="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml" Line="16" Column="70" />
-      <File FileName="GamesCatalogXamarin/FullGamePage.xaml" Line="23" Column="27" />
+      <File FileName="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml" Line="36" Column="28" />
+      <File FileName="GamesCatalogXamarin/FullGamePage.xaml" Line="25" Column="1" />
       <File FileName="GamesCatalogXamarin/GamesCatalogXamarinPage.xaml.cs" Line="1" Column="1" />
       <File FileName="Droid/GamesCatalogXamarin.Droid.csproj" Line="1" Column="1" />
+      <File FileName="Droid/MultiLineLabelRendererDroid.cs" Line="20" Column="13" />
+      <File FileName="iOS/MultiLineLabelRendererIOS.cs" Line="17" Column="60" />
+      <File FileName="GamesCatalogXamarin/MultiLineLabel.cs" Line="14" Column="10" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="25" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

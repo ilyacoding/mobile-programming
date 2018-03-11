@@ -13,7 +13,7 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Orientation="Horizontal" Padding="8">
-                            <Image WidthRequest="50" HeightRequest="50" Source="{Binding Image}"></Image>
+                            <Image WidthRequest="60" HeightRequest="60" Source="{Binding Image}"></Image>
                             <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
                               <Grid>
                                 <Grid.RowDefinitions>
@@ -26,7 +26,9 @@
                                 <Label Text="{Binding Title}" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0" />
                                 <Label Text="{Binding ReleaseDate}" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="1" />
                               </Grid>
-                              <Label Text="{Binding ShortDescription}" LineBreakMode="TailTruncation"/>
+                              <local:MultiLineLabel Text="{Binding ShortDescription}"
+                                                    Lines="2"
+                                                    LineBreakMode="TailTruncation"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell.View>

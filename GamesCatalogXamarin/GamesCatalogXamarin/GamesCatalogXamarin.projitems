@@ -32,5 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)FullGamePage.xaml.cs">
       <DependentUpon>FullGamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MultiLineLabel.cs" />
   </ItemGroup>
 </Project>
