@@ -47,33 +47,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="106" id="vmQ-78-9iA" customClass="CityTableViewCell" customModule="WeatherForecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="90" id="vmQ-78-9iA" customClass="CityTableViewCell" customModule="WeatherForecast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmQ-78-9iA" id="eMU-ny-4Rm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-nQ-EIj">
-                                            <rect key="frame" x="16" y="11" width="80" height="80"/>
+                                            <rect key="frame" x="5" y="5" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="5UG-pd-39c"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fKJ-V9-Gn3"/>
                                                 <constraint firstAttribute="height" constant="80" id="kub-Bz-XxE"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="yLK-nD-sU7"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdf-QI-j1Q">
-                                            <rect key="frame" x="104" y="22" width="77" height="21"/>
+                                            <rect key="frame" x="93" y="11" width="77" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="leading" secondItem="Ung-nQ-EIj" secondAttribute="trailing" constant="8" id="Icl-o9-FTy"/>
-                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="topMargin" id="S2p-8M-9Pn"/>
-                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="leading" secondItem="eMU-ny-4Rm" secondAttribute="leadingMargin" id="cpK-NJ-bwg"/>
-                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="topMargin" constant="11" id="cy1-bV-Gd3"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ung-nQ-EIj" secondAttribute="bottom" constant="4" id="yAT-Hg-ZGw"/>
+                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="top" constant="5" id="2D4-wU-PMp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kdf-QI-j1Q" secondAttribute="bottom" constant="47" id="32E-lr-dXA"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kdf-QI-j1Q" secondAttribute="trailing" constant="20" symbolic="YES" id="ARg-2k-hpg"/>
+                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="leading" secondItem="Ung-nQ-EIj" secondAttribute="trailing" constant="8" id="ArN-Nj-nw7"/>
+                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="leading" secondItem="eMU-ny-4Rm" secondAttribute="leading" constant="5" id="FHE-1J-McL"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ung-nQ-EIj" secondAttribute="bottom" constant="5" id="Hzt-zK-6LW"/>
+                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="topMargin" id="Ulk-Uw-fuH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="Cell">
