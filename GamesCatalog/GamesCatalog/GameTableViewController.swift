@@ -12,7 +12,7 @@ class GameTableViewController: UITableViewController {
     
     var games = [Game]()
     var choosenGame : Game? = nil
-    
+
     private func loadGames()
     {
         let path = Bundle.main.path(forResource: "gameList", ofType: "json")
@@ -24,7 +24,7 @@ class GameTableViewController: UITableViewController {
         {
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGames()
@@ -59,7 +59,7 @@ class GameTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of GameTableViewCell.")
         }
         let game = games[indexPath.row]
-        
+
         cell.titleLabel.text = game.Title
         cell.releaseDataLabel.text = game.ReleaseDate
         cell.descriptionLabel.text = game.ShortDescription
@@ -67,7 +67,7 @@ class GameTableViewController: UITableViewController {
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         updateChoosenGame()
     }
@@ -89,7 +89,7 @@ class GameTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -111,7 +111,7 @@ class GameTableViewController: UITableViewController {
     func updateChoosenGame() {
         choosenGame = games[(tableView.indexPathForSelectedRow?.row)!]
     }
-    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -124,6 +124,6 @@ class GameTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
- 
+
 
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3C7CEAF54D6FE4EC46C8889F /* Pods_WeatherForecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E67DC407ECC48E66CB2561 /* Pods_WeatherForecast.framework */; };
+		4F16216C20572E6000859BB0 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F16216B20572E6000859BB0 /* City.swift */; };
+		4F781A552057339900B004D6 /* CitiesJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F781A542057339900B004D6 /* CitiesJSONSerializer.swift */; };
+		4F781A572057341800B004D6 /* cityList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F781A562057341800B004D6 /* cityList.json */; };
+		4F781A592057395900B004D6 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F781A582057395900B004D6 /* CityTableViewCell.swift */; };
 		4F93A94A2055D9BB005DDC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93A9492055D9BB005DDC6D /* AppDelegate.swift */; };
 		4F93A94F2055D9BB005DDC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F93A94D2055D9BB005DDC6D /* Main.storyboard */; };
 		4F93A9512055D9BB005DDC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F93A9502055D9BB005DDC6D /* Assets.xcassets */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F16216B20572E6000859BB0 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		4F781A542057339900B004D6 /* CitiesJSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesJSONSerializer.swift; sourceTree = "<group>"; };
+		4F781A562057341800B004D6 /* cityList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cityList.json; sourceTree = "<group>"; };
+		4F781A582057395900B004D6 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		4F93A9462055D9BB005DDC6D /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F93A9492055D9BB005DDC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F93A94E2055D9BB005DDC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +86,10 @@
 				4F93A9552055D9BB005DDC6D /* Info.plist */,
 				4F93A95B20572374005DDC6D /* MasterViewController.swift */,
 				4F93A95D205724BF005DDC6D /* DetailViewController.swift */,
+				4F16216B20572E6000859BB0 /* City.swift */,
+				4F781A542057339900B004D6 /* CitiesJSONSerializer.swift */,
+				4F781A562057341800B004D6 /* cityList.json */,
+				4F781A582057395900B004D6 /* CityTableViewCell.swift */,
 			);
 			path = WeatherForecast;
 			sourceTree = "<group>";
@@ -155,6 +167,7 @@
 			files = (
 				4F93A9542055D9BB005DDC6D /* LaunchScreen.storyboard in Resources */,
 				4F93A9512055D9BB005DDC6D /* Assets.xcassets in Resources */,
+				4F781A572057341800B004D6 /* cityList.json in Resources */,
 				4F93A94F2055D9BB005DDC6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,11 +183,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherForecast/Pods-WeatherForecast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F781A592057395900B004D6 /* CityTableViewCell.swift in Sources */,
 				4F93A95E205724BF005DDC6D /* DetailViewController.swift in Sources */,
 				4F93A95C20572374005DDC6D /* MasterViewController.swift in Sources */,
+				4F781A552057339900B004D6 /* CitiesJSONSerializer.swift in Sources */,
+				4F16216C20572E6000859BB0 /* City.swift in Sources */,
 				4F93A94A2055D9BB005DDC6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

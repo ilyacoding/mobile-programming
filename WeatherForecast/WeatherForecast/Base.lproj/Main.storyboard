@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,25 +47,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="bYg-OH-cwK" rowHeight="70" style="IBUITableViewCellStyleDefault" id="vmQ-78-9iA">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="106" id="vmQ-78-9iA" customClass="CityTableViewCell" customModule="WeatherForecast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vmQ-78-9iA" id="eMU-ny-4Rm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bYg-OH-cwK">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="69.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-nQ-EIj">
+                                            <rect key="frame" x="16" y="11" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="5UG-pd-39c"/>
+                                                <constraint firstAttribute="height" constant="80" id="kub-Bz-XxE"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdf-QI-j1Q">
+                                            <rect key="frame" x="104" y="22" width="77" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="leading" secondItem="Ung-nQ-EIj" secondAttribute="trailing" constant="8" id="Icl-o9-FTy"/>
+                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="topMargin" id="S2p-8M-9Pn"/>
+                                        <constraint firstItem="Ung-nQ-EIj" firstAttribute="leading" secondItem="eMU-ny-4Rm" secondAttribute="leadingMargin" id="cpK-NJ-bwg"/>
+                                        <constraint firstItem="kdf-QI-j1Q" firstAttribute="top" secondItem="eMU-ny-4Rm" secondAttribute="topMargin" constant="11" id="cy1-bV-Gd3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ung-nQ-EIj" secondAttribute="bottom" constant="4" id="yAT-Hg-ZGw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="Cell">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
+                                <connections>
+                                    <outlet property="cityLogo" destination="Ung-nQ-EIj" id="Z3W-Ea-huE"/>
+                                    <outlet property="cityName" destination="kdf-QI-j1Q" id="PXv-fC-nbo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

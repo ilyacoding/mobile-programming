@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MasterViewController: UITableViewController {
 
+    var cities = [City]()
+    var ImageCache = [String: UIImage]()
+    
+    private func loadCities() {
+        let path = Bundle.main.path(forResource: "cityList", ofType: "json")
+        do {
+            let data = try String(contentsOfFile: path!)
+            self.cities = CitiesJSONSerializer().Deserialize(source: data)
+        }
+        catch
+        {
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCities()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,11 +51,49 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return cities.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cellIdentifier = "CityTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CityTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CityTableViewCell.")
+        }
+        let city = cities[indexPath.row]
+        
+        cell.cityName.text = city.name
+        
+        let cityName = city.name
+        
+        if let cityImage = ImageCache[cityName] {
+            let cityImageView: UIImageView = cell.imageView!
+            cityImageView.image = cityImage
+        } else {
+            Alamofire.request(city.imageUrl).responseImage { response in
+                if let image = response.result.value {
+                    self.ImageCache[cityName] = image
+                    
+                    DispatchQueue.main.async {
+                        if let cellToUpdate = tableView.cellForRow(at: indexPath) {
+                            let cityImageView: UIImageView = cellToUpdate.imageView!
+                            cityImageView.image = image
+                        }
+                    }
+                }
+            }
+        }
+        
+//        Alamofire.request().responseImage { response in
+//            if let image = response.result.value {
+//                cell.imageView?.image = image
+//            }
+//        }
+        
+//        cell.titleLabel.text = game.Title
+//        cell.releaseDataLabel.text = game.ReleaseDate
+//        cell.descriptionLabel.text = game.ShortDescription
+//        cell.previewImageView.image = game.Image
+        
         return cell
     }
  
