@@ -10,7 +10,12 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+protocol CitySelectionDelegate: class {
+    func citySelected(_ newCity: City)
+}
+
 class MasterViewController: UITableViewController {
+    weak var delegate: CitySelectionDelegate?
 
     var cities = [City]()
     var ImageCache = [String: UIImage]()
@@ -23,6 +28,7 @@ class MasterViewController: UITableViewController {
         }
         catch
         {
+            
         }
     }
     
@@ -95,6 +101,16 @@ class MasterViewController: UITableViewController {
 //        cell.previewImageView.image = game.Image
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCity = cities[indexPath.row]
+        delegate?.citySelected(selectedCity)
+        
+        if let detailViewController = delegate as? DetailViewController,
+            let detailNavigationController = detailViewController.navigationController {
+            splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+        }
     }
  
     /*

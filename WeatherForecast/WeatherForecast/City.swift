@@ -22,8 +22,4 @@ class City {
         self.longitude = longitude
         self.imageUrl = imageUrl
     }
-    
-//    var icon: UIImage? {
-//        return UIImage(named: iconName)
-//    }
 }
