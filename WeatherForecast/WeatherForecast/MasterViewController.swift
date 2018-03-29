@@ -18,45 +18,80 @@ class MasterViewController: UITableViewController {
     weak var delegate: CitySelectionDelegate?
 
     var cities = [City]()
-    var ImageCache = [String: UIImage]()
     
-    private func loadCities() {
-        let path = Bundle.main.path(forResource: "cityList", ofType: "json")
-        do {
-            let data = try String(contentsOfFile: path!)
-            self.cities = CitiesJSONSerializer().Deserialize(source: data)
+    func performDataRequest(_ url: URL, completion: @escaping (String?) -> Void) {
+        Alamofire.request(url).responseString {
+            response in
+            if let data = response.result.value {
+                completion(data)
+            } else {
+                completion(nil)
+            }
         }
-        catch
-        {
+    }
+    
+    func performImageRequest(_ url: String, completion: @escaping (Image?) -> Void) {
+        Alamofire.request(url).responseImage {
+            response in
+            if let image = response.result.value {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func getCurrentWeatherApiUrl(_ cityName: String) -> URL {
+        let requestLink = "https://api.apixu.com/v1/current.json?key=bca10c771c2a41a59b6203640182803&q=" + cityName
+        return URL(string: requestLink)!
+    }
+    
+    private func loadCitiesWithWeather() {
+        let path = Bundle.main.path(forResource: "cityList", ofType: "json")
+        let data = try! String(contentsOfFile: path!)
+        self.cities = CitiesJSONSerializer().Deserialize(source: data)
+        
+        DispatchQueue.global(qos: .utility).async {
+            for city in self.cities {
+                self.performImageRequest(city.imageUrl, completion: { image in
+                    city.image = image
+                })
+                
+                let weatherApiUrl = self.getCurrentWeatherApiUrl(city.name)
+                self.performDataRequest(weatherApiUrl, completion: { weatherData in
+                    let weather = WeatherJSONSerializer().Deserialize(source: weatherData!)!
+                    
+                    self.performImageRequest(weather.imageUrl, completion: { weatherLogo in
+                        weather.image = weatherLogo
+                    })
+                    
+                    city.weather = weather
+                })
+            }
             
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.tableView.reloadData();
+                self.refreshControl?.endRefreshing()
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCities()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadCitiesWithWeather()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cities.count
     }
 
@@ -68,37 +103,10 @@ class MasterViewController: UITableViewController {
         let city = cities[indexPath.row]
         
         cell.cityName.text = city.name
-        
-        let cityName = city.name
-        
-        if let cityImage = ImageCache[cityName] {
-            let cityImageView: UIImageView = cell.imageView!
-            cityImageView.image = cityImage
-        } else {
-            Alamofire.request(city.imageUrl).responseImage { response in
-                if let image = response.result.value {
-                    self.ImageCache[cityName] = image
-                    
-                    DispatchQueue.main.async {
-                        if let cellToUpdate = tableView.cellForRow(at: indexPath) {
-                            let cityImageView: UIImageView = cellToUpdate.imageView!
-                            cityImageView.image = image
-                        }
-                    }
-                }
-            }
-        }
-        
-//        Alamofire.request().responseImage { response in
-//            if let image = response.result.value {
-//                cell.imageView?.image = image
-//            }
-//        }
-        
-//        cell.titleLabel.text = game.Title
-//        cell.releaseDataLabel.text = game.ReleaseDate
-//        cell.descriptionLabel.text = game.ShortDescription
-//        cell.previewImageView.image = game.Image
+        cell.cityLogo.image = city.image
+        cell.weatherTemperature.text = city.weather?.temperature
+        cell.weatherLogo.image = city.weather?.image
+        cell.weatherWind.text = city.weather?.windKph
         
         return cell
     }

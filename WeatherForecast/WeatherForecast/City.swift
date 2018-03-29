@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import AlamofireImage
 
 class City {
     let name: String
     let description: String
     let latitude: String
     let longitude: String
-    let imageUrl: String
+    
+    var imageUrl: String
+    var image: Image?
+    var weather: Weather?
     
     init(name: String, description: String, latitude: String, longitude: String, imageUrl: String) {
         self.name = name

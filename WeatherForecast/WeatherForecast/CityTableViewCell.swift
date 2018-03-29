@@ -13,6 +13,10 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var cityLogo: UIImageView!
     
+    @IBOutlet weak var weatherTemperature: UILabel!
+    @IBOutlet weak var weatherLogo: UIImageView!
+    @IBOutlet weak var weatherWind: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

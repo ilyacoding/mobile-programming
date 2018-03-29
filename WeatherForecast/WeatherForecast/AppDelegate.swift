@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let detailViewController = rightNavController.topViewController as? DetailViewController
             else { fatalError() }
         
-        detailViewController.city = masterViewController.cities.first
-        
         masterViewController.delegate = detailViewController
         
         detailViewController.navigationItem.leftItemsSupplementBackButton = true
