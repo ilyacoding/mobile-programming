@@ -3,15 +3,11 @@
                {
                 "name" : "Minsk",
                 "description" : "Minsk (Belarusian: Мінск, pronounced [mʲinsk]; Russian: Минск, [mʲinsk]) is the capital and largest city of Belarus, situated on the Svislach and the Nyamiha Rivers. Minsk (Belarusian: Мінск, pronounced [mʲinsk]; Russian: Минск, [mʲinsk]) is the capital and largest city of Belarus, situated on the Svislach and the Nyamiha Rivers.",
-                "latitude" : "1.2345",
-                "longitude" : "2.3456",
                 "imageUrl" : "https://i.imgur.com/I7Fnx0f.png",
                },
                {
                 "name" : "Gomel",
                 "description" : "Nice weather",
-                "latitude" : "9.8765",
-                "longitude" : "5.4321",
                 "imageUrl" : "https://i.imgur.com/LXXBZMi.png"
                }
               ]

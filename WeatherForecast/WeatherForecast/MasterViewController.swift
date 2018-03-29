@@ -55,23 +55,28 @@ class MasterViewController: UITableViewController {
             for city in self.cities {
                 self.performImageRequest(city.imageUrl, completion: { image in
                     city.image = image
+                    self.tableView.reloadData();
                 })
                 
                 let weatherApiUrl = self.getCurrentWeatherApiUrl(city.name)
                 self.performDataRequest(weatherApiUrl, completion: { weatherData in
                     let weather = WeatherJSONSerializer().Deserialize(source: weatherData!)!
+                    let cityProperties = CityPropertiesJSONSerializer().Deserialize(source: weatherData!)
                     
                     self.performImageRequest(weather.imageUrl, completion: { weatherLogo in
                         weather.image = weatherLogo
+                        self.tableView.reloadData();
                     })
                     
                     city.weather = weather
+                    city.latitude = cityProperties?.lat
+                    city.longitude = cityProperties?.lon
+                    self.tableView.reloadData();
                 })
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self.tableView.reloadData();
-                self.refreshControl?.endRefreshing()
+//                self.refreshControl?.endRefreshing()
             }
         }
     }

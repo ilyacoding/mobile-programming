@@ -17,11 +17,9 @@ class CitiesJSONSerializer {
             for game in json["cities"].arrayValue {
                 let name = game["name"].stringValue
                 let description = game["description"].stringValue
-                let latitude = game["latitude"].stringValue
-                let longitude = game["longitude"].stringValue
                 let imageUrl = game["imageUrl"].stringValue
                 
-                let cityInfo = City(name: name, description: description, latitude: latitude, longitude: longitude, imageUrl: imageUrl)
+                let cityInfo = City(name, description, imageUrl)
                 array += [cityInfo]
             }
             return array

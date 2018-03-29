@@ -10,11 +10,13 @@ import Foundation
 import AlamofireImage
 
 class Weather {
-    var temperature: String
-    var imageUrl: String
-    var windKph: String
-    var windDegree: Double
+    let temperature: String
+    let imageUrl: String
+    let windKph: String
+    let windDegree: Double
     var image: Image?
+    
+    var forecastList = [Forecast]()
     
     init(_ temperature: String, _ imageUrl: String, _ windKph: String, _ windDegree: Double) {
         self.temperature = temperature
