@@ -111,7 +111,11 @@ class MasterViewController: UITableViewController {
         cell.cityLogo.image = city.image
         cell.weatherTemperature.text = city.weather?.temperature
         cell.weatherLogo.image = city.weather?.image
-        cell.weatherWind.text = city.weather?.windKph
+        if let lat = city.latitude, let lon = city.longitude {
+            cell.cityLatLon.text = "Lat: " + lat + ", Lon: " + lon
+        }
+        cell.cityDescription.text = city.description
+//        cell.weatherWind.text = city.weather?.windKph
         
         return cell
     }

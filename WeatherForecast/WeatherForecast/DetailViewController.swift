@@ -9,6 +9,14 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//    }
+    
     @IBOutlet weak var cityImage: UIImageView!
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var cityDescription: UILabel!
@@ -51,6 +59,22 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+//                                                      for: indexPath)
+//        cell.backgroundColor = UIColor.black
+//        
+//        return cell
+//    }
+//    
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return city?.weather?.forecastList.count
+//    }
 
 }
 

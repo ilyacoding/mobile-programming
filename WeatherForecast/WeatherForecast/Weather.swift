@@ -16,8 +16,6 @@ class Weather {
     let windDegree: Double
     var image: Image?
     
-    var forecastList = [Forecast]()
-    
     init(_ temperature: String, _ imageUrl: String, _ windKph: String, _ windDegree: Double) {
         self.temperature = temperature
         self.imageUrl = imageUrl
