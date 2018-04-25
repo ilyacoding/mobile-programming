@@ -16,8 +16,10 @@ protocol CitySelectionDelegate: class {
 
 class MasterViewController: UITableViewController {
     weak var delegate: CitySelectionDelegate?
+    fileprivate var collapseDetailViewController = true
 
     var cities = [City]()
+    var refresher: UIRefreshControl!
     
     func performDataRequest(_ url: URL, completion: @escaping (String?) -> Void) {
         Alamofire.request(url).responseString {
@@ -83,11 +85,31 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadCitiesWithWeather()
+        
+        refresher = UIRefreshControl()
+        tableView.addSubview(refresher)
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.tintColor = UIColor(red: 1.0, green: 0.5, blue: 1.0, alpha: 0.9)
+        refresher.addTarget(self, action: #selector(refresherUpdate), for: .valueChanged)
     }
 
+    @objc func refresherUpdate() {
+        loadCitiesWithWeather()
+        
+        tableView.reloadData()
+        refresher.endRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        loadCitiesWithWeather()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     // MARK: - Table view data source
@@ -176,3 +198,4 @@ class MasterViewController: UITableViewController {
     */
 
 }
+

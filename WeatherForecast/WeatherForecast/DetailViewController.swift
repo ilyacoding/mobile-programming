@@ -31,11 +31,6 @@ class DetailViewController: UIViewController {
         loadViewIfNeeded()
         cityName.text = city?.name
         cityDescription.text = city?.description
-//        city.
-//        nameLabel.text = monster?.name
-//        descriptionLabel.text = monster?.description
-//        iconImageView.image = monster?.icon
-//        weaponImageView.image = monster?.weaponImage
     }
     
     override func viewDidLoad() {
